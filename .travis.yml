@@ -8,3 +8,15 @@ before_install:
 
 script:
   - docker run -e CI=true sparkubuntu/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react-aws"
+  env: "Dockerreactaws-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-998733361551"
+  bucket_path: "docker-react-aws"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  access_key_secret: "$AWS_SECRET_KEY"
