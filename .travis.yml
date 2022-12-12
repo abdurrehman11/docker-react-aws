@@ -1,5 +1,7 @@
 sudo: required
-language: generic
+language: node_js
+node_js:
+  - '8'
 
 services: 
   - docker
@@ -21,4 +23,3 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  
