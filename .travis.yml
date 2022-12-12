@@ -1,7 +1,5 @@
 sudo: required
-language: node_js
-node_js:
-  - '8'
+language: generic
 
 services: 
   - docker
@@ -16,7 +14,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
   app: 'docker'
-  env: "docker-env"
+  env: 'docker-env'
   bucket_name: 'elasticbeanstalk-us-east-1-998733361551'
   bucket_path: 'docker'
   on:
